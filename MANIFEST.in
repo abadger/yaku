@@ -1,8 +1,4 @@
-include examples/src/*.c
-include examples/src/*.h
-include examples/src/*.h.in
-include examples/src/*.pyx
-include examples/conf_example.py
-include examples/example.py
-include examples/example1.py
+recursive-include examples *
 include NOTES
+include test.sh
+recursive-include tools *.py

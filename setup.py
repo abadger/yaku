@@ -22,5 +22,12 @@ setup(name="yaku",
     author="David Cournapeau",
     author_email="cournape@gmail.com",
     license="BSD",
-    packages=["yaku.tools", "yaku", "yaku.compat"],
+    packages=[
+        "yaku",
+        "yaku.compat",
+        "yaku.conftests",
+        "yaku.tests",
+        "yaku.tools",
+        "yaku.tools.mscommon",
+        ],
 )
