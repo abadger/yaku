@@ -21,8 +21,8 @@ ntests3=0
 old_PYTHONPATH=$PYTHONPATH
 PYTHONPATH=$PWD:$PYTHONPATH
 
-PYTHON2=python2.6
-PYTHON3=python3.2
+PYTHON2=${PYTHON2:-python2.6}
+PYTHON3=${PYTHON3:-python3.2}
 
 for i in $tests; do
 	echo "======== TESTING $i ============="
@@ -35,6 +35,13 @@ for i in $tests; do
 	fi
 	ntests=`expr $ntests + 1`;
 done
+
+# Cleanup
+rm -rf ./examples/build/ \
+	./examples/fortran/build/ \
+	./examples/chaining/build/ \
+	./examples/c/build/ \
+	./examples/c/BBUILD/
 
 $PYTHON3 setup.py build
 export PYTHONPATH=$PWD/build/py3k
